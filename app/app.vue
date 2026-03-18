@@ -17,8 +17,8 @@ useHead({
 })
 
 useSeoMeta({
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
+  ogImage: 'https://fitanon.app/og-image.png',
+  twitterImage: 'https://fitanon.app/og-image.png',
   twitterCard: 'summary_large_image'
 })
 </script>

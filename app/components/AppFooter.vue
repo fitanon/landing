@@ -1,57 +1,57 @@
 <script setup lang="ts">
 const columns = [{
-  label: 'Resources',
+  label: 'Product',
   children: [{
-    label: 'Help center'
+    label: 'Features',
+    to: '#features'
   }, {
-    label: 'Docs'
-  }, {
-    label: 'Roadmap'
+    label: 'Pricing',
+    to: '#pricing'
   }, {
     label: 'Changelog'
+  }, {
+    label: 'Roadmap'
   }]
 }, {
-  label: 'Features',
+  label: 'Privacy',
   children: [{
-    label: 'Affiliates'
+    label: 'Privacy Policy'
   }, {
-    label: 'Portal'
+    label: 'Terms of Service'
   }, {
-    label: 'Jobs'
+    label: 'Data Handling'
   }, {
-    label: 'Sponsors'
+    label: 'Security'
   }]
 }, {
   label: 'Company',
   children: [{
     label: 'About'
   }, {
-    label: 'Pricing'
+    label: 'Blog'
   }, {
     label: 'Careers'
   }, {
-    label: 'Blog'
+    label: 'Contact'
   }]
 }]
 
 const toast = useToast()
 
 const email = ref('')
-const loading = ref(false)
 
 function onSubmit() {
-  loading.value = true
-
   toast.add({
     title: 'Subscribed!',
     description: 'You\'ve been subscribed to our newsletter.'
   })
+  email.value = ''
 }
 </script>
 
 <template>
   <USeparator
-    icon="i-simple-icons-nuxtdotjs"
+    icon="i-lucide-dumbbell"
     class="h-px"
   />
 
@@ -63,7 +63,7 @@ function onSubmit() {
             <form @submit.prevent="onSubmit">
               <UFormField
                 name="email"
-                label="Subscribe to our newsletter"
+                label="Stay in the loop"
                 size="lg"
               >
                 <UInput
@@ -89,32 +89,32 @@ function onSubmit() {
 
     <template #left>
       <p class="text-sm text-muted">
-        Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        Fitanon — Train hard. Stay private. © {{ new Date().getFullYear() }}
       </p>
     </template>
 
     <template #right>
       <UButton
-        to="https://go.nuxt.com/discord"
+        to="https://instagram.com/fitanon"
         target="_blank"
-        icon="i-simple-icons-discord"
-        aria-label="Nuxt on Discord"
+        icon="i-simple-icons-instagram"
+        aria-label="Fitanon on Instagram"
         color="neutral"
         variant="ghost"
       />
       <UButton
-        to="https://go.nuxt.com/x"
+        to="https://x.com/fitanon"
         target="_blank"
         icon="i-simple-icons-x"
-        aria-label="Nuxt on X"
+        aria-label="Fitanon on X"
         color="neutral"
         variant="ghost"
       />
       <UButton
-        to="https://github.com/nuxt-ui-templates/landing"
+        to="https://github.com/fitanon"
         target="_blank"
         icon="i-simple-icons-github"
-        aria-label="Nuxt UI on GitHub"
+        aria-label="Fitanon on GitHub"
         color="neutral"
         variant="ghost"
       />

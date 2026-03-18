@@ -7,20 +7,20 @@ const items = computed(() => [{
   to: '#features',
   active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('pricing')
 }, {
+  label: 'How it works',
+  to: '#steps',
+  active: activeHeadings.value.includes('steps') && !activeHeadings.value.includes('pricing')
+}, {
   label: 'Pricing',
   to: '#pricing',
   active: activeHeadings.value.includes('pricing')
-}, {
-  label: 'Testimonials',
-  to: '#testimonials',
-  active: activeHeadings.value.includes('testimonials') && !activeHeadings.value.includes('pricing')
 }])
 
 nuxtApp.hooks.hookOnce('page:finish', () => {
   updateHeadings([
     document.querySelector('#features'),
-    document.querySelector('#pricing'),
-    document.querySelector('#testimonials')
+    document.querySelector('#steps'),
+    document.querySelector('#pricing')
   ].filter(Boolean) as Element[])
 })
 </script>
@@ -29,10 +29,8 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+        <AppLogo class="w-auto h-7 shrink-0" />
       </NuxtLink>
-
-      <TemplateMenu />
     </template>
 
     <template #right>
@@ -43,8 +41,9 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
 
       <UButton
-        label="Download App"
-        variant="subtle"
+        label="Get started free"
+        color="primary"
+        to="#pricing"
         class="hidden lg:block"
       />
 
@@ -59,8 +58,9 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
       <UButton
         class="mt-4"
-        label="Download App"
-        variant="subtle"
+        label="Get started free"
+        color="primary"
+        to="#pricing"
         block
       />
     </template>
